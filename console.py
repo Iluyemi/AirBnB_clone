@@ -9,7 +9,6 @@ import json
 
 class HBNBCommand(cmd.Cmd):
 
-
     prompt = "(hbnb) "
 
 # EOF command exits out of the comand line interpreter
