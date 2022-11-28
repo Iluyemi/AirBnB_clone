@@ -1,7 +1,11 @@
 #!/usr/bin/python3
-"""AirBnB_Clone ommand Line Interpreter"""
+"""
+    AirBnB_Clone ommand Line Interpreter
+"""
 
 import cmd
+import json
+
 class HBNBCommand(cmd.Cmd):
 
     prompt = "(hbnb) "
