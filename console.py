@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-
-
 """
     AirBnB_Clone ommand Line Interpreter
 """
