@@ -1,7 +1,10 @@
 #!/bin/python3
+"""BaseModel"""
+
 import uuid
 from datetime import datetime
-"""Creating BaseModel class"""
+
+"""creating BaseModel class"""
 DATETIME = "%Y-%m-%dT%H:%M:%S.%f"
 
 
@@ -14,12 +17,12 @@ class BaseModel:
             self.updated_at = datetime.now()
             self.created_at = datetime.now()
         else:
-            kwargs['updated_at'] = datetime.strptime(kwargs['updated_at'],
-                                                     DATETIME)
-            kwargs['created_at'] = datetime.strptime(kwargs['created_at'],
-                                                     DATETIME)
-            del kwargs['__class__']
-            self.__dict__.update(kwargs)
+            for key, value in kwargs.items():
+                if key in ["created_at", "updated_at"]:
+                    value = datetime.strftime(value, DATETIME)
+
+                if key not in ["__class__"]:
+                    setattr(self, key, value)
 
     def __str__(self):
         """ printing of string representation"""
